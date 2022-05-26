@@ -1,0 +1,8 @@
+
+game.cfg
+pacman.cfg
+server.cfg
+
+level.bak
+# Project exclude paths
+/bin/
