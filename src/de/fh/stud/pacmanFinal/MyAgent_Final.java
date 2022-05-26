@@ -7,6 +7,7 @@ import de.fh.pacman.PacmanPercept;
 import de.fh.pacman.PacmanStartInfo;
 import de.fh.pacman.enums.PacmanAction;
 import de.fh.pacman.enums.PacmanActionEffect;
+import de.fh.stud.minimax.MinimaxKnoten;
 
 public class MyAgent_Final extends PacmanAgent {
 	// Pommes
@@ -21,7 +22,6 @@ public class MyAgent_Final extends PacmanAgent {
 
 	@Override
 	public PacmanAction action(PacmanPercept percept, PacmanActionEffect actionEffect) {
-		
 		return PacmanAction.GO_EAST;
 	}
 

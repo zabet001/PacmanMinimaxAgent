@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>486</y>
+      <w>99</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>valign=center
+halign=center
+Middle center
+
+bla
+bla bla</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>549</x>
+      <y>648</y>
+      <w>369</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Ideen:
+- hunter setzt alle 5 runden aus (alle anderen auch???) -&gt; in expand mit einbeziehen
+- random nicht berechnen wenn er zu weit entfernt ist
+ (definiere "zu weit" (z.B. kann nicht "Sackgassen erzeugen"))
+_- Bewertungen:_
+  - Bei Distanz Pacman - Ghost Typ berücksichtigen
+- playerTurn boolean statt int:
+Eine Ebene entweder Aktion von Player oder Aktionen von ALLEN Ghosts
+-&gt; spart Knoten
+- closedList
+- view-Array kopieren oder vom Vorgaenger uebernehmen
+- Knotentiefe in rekursive Suchmethode speichern
+- expectimax (dann type mit einbeziehen)
+- negamax
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>63</y>
+      <w>270</w>
+      <h>459</h>
+    </coordinates>
+    <panel_attributes>MinimaxKnoten
+--
+-activeAgent: bool ODER int
+
+-pacmanPos: Vector2
+
+-ghostPos: Vector2[]
+-ghostSpawn: Vector2[] {readOnly}
+-ghostType: String[] {readOnly}
+-ghostPillTimer: int[]
+-ghostRespawnTimer: int[]
+// wenn RespawnTimer &gt; 0: isDead() == true
+
+-view: PacmanTileType[]
+// PACMAN und GHOST_... enums aus der view entfernen
+
+-costSum: int {readOnly}
+-remainingDots: int
+
+-nodeDepth:int
+-nodeRating: float {readOnly}
+-
++expand():MinimaxKnoten[]
+-expandMin():MinimaxKnoten[]
+-expandMax():MinimaxKnoten[]
+
++rateNode():float
+-calcNodeRating():float
+
++resolveActions():PacmanAction[]
+
++distanceToNearestGhost(): int
++canEscapeFromFixedDeadEnd(): bool
+*canEscapeFromGhostDeadEnd(): bool*
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>63</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+predecessor</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0;40.0;50.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>108</y>
+      <w>171</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>MinimaxSuche
+--
+-maxDepth:int {readOnly}
+--
++min(succ:Knoten):Knoten
++min(succ:Knoten):Knoten</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
